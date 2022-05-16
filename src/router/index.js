@@ -15,7 +15,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about"*/ '../views/About.vue')
   },
   {
     path: '/itemMusic',
@@ -37,7 +37,7 @@ const routes = [
     //路由守卫 相当于一个权限判断 判断是否已经登陆
     beforeEnter: (to, from, next) => {
       //除了判断是否是登陆状态 还要判断token 一个条件满足即可
-      if(store.state.isLogin || store.state.token || localStorage.getItem('token')){
+      if(sessionStorage.getItem("user") && (store.state.isLogin || store.state.token || localStorage.getItem('token'))){
         next()
       }else{
         next('/login')
@@ -56,6 +56,22 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue')
   },
+  {
+    path: '/SideBar',
+    component: () => import(/* webpackChunkName: "sideBar" */'../views/SideBar.vue')
+  },
+  {
+    path: '/dailyPlayList',
+    component: () => import(/* webpackChunkName: "dailyPlayList"*/ '../views/DailyPlayList.vue')
+  },
+  {
+    path: '/songList',
+    component: () => import(/* webpackChunkName: "songList"*/ '../views/SongList.vue')
+  },
+  {
+    path: '/personalFm',
+    component: () => import(/* webpackChunkName: "personalFm"*/ '../views/PersonalFm.vue')
+  }
 ]
 
 const router = createRouter({
@@ -65,7 +81,7 @@ const router = createRouter({
 
 //全局守卫 若进入登陆界面则隐藏底部播放组件
 router.beforeEach((to,from)=>{
-  if(to.path=='/login'){
+  if(to.path=='/login' || to.path=='/InfoUser' || to.path=='/about'){
     store.state.isFooterMusic=false
   }else{
     store.state.isFooterMusic=true

@@ -2,7 +2,7 @@
     <div class="topNav">
         <!-- 使用字体图标 symbol -->
         <div class="topLeft">
-            <svg class="icon" aria-hidden="true">
+            <svg class="icon" aria-hidden="true" @click="updateIsSideBar">
                 <use xlink:href="#icon-31liebiao"></use>
             </svg>
         </div>
@@ -19,7 +19,17 @@
             </svg>
         </div>
     </div>
+    
 </template>
+
+<script>
+import { mapMutations } from "vuex";
+export default {
+    methods: {
+        ...mapMutations(["updateIsSideBar"])
+    }
+}
+</script>
 
 <style lang="less" scoped>
     .topNav {

@@ -1,5 +1,5 @@
 //从request文件中的index.js引入service实例
-import service from '..';
+import { service } from '..';
 //定义一个函数 获取轮播图banner,并把函数抛出去 export
 export function getBanner() {
     return service({

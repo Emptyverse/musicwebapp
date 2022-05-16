@@ -26,7 +26,8 @@ export default createStore({
     isLogin:false,//判断是否登录
     isFooterMusic:true,//判断底部组件是否需要显示
     token:"",
-    user:{},//用户信息
+    user: {},//用户信息
+    isSideBarShow: false,//侧边栏关闭
   },
   getters: {
   },
@@ -82,6 +83,9 @@ export default createStore({
     updateUser:function(state,value){
       state.user = value
       // console.log(value)
+    },
+    updateIsSideBar: function (state) {
+      state.isSideBarShow = true
     }
   },
   actions: {

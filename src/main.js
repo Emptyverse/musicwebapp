@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import getVantPlugins from './plugins'
 
+
 const app = createApp(App)
 getVantPlugins(app)
 app.use(store)

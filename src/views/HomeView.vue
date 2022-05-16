@@ -5,6 +5,7 @@
     <Swiper></Swiper>
     <IconList></IconList>
     <MusicList></MusicList>
+    <SideBar></SideBar>
   </div>
 </template>
 
@@ -15,7 +16,7 @@ import TopNav from"@/components/home/TopNav.vue";
 import Swiper from"@/components/home/Swiper.vue";
 import IconList from"@/components/home/IconList.vue";
 import MusicList from"@/components/home/MusicList.vue"
-
+import SideBar from "@/views/SideBar.vue"
 export default {
   name: 'HomeView',
   //2、注册组件
@@ -23,7 +24,8 @@ export default {
     TopNav,//key value 同名可以简写成一个
     Swiper,
     IconList,
-    MusicList
+    MusicList,
+    SideBar,
   }
 }
 </script>

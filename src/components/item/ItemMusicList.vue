@@ -6,8 +6,9 @@
           <use xlink:href="#icon-bofanganniu"></use>
         </svg>
         <!-- 获取歌单列表长度{{插值语法}} -->
-        <span
-          >播放全部<span>(共{{ itemList.length }}首)</span></span
+        <span>播放全部
+          <span>(共{{ itemList.length }}首)</span>
+        </span
         >
       </div>
       <!-- 歌单列表左侧点击播放音乐 -->
@@ -51,7 +52,7 @@
 import { mapMutations } from "vuex";
 export default {
   setup(props) {
-    console.log(props);
+    // console.log(props);
   },
   props: ["itemList", "subscribedCount"],
   methods: {

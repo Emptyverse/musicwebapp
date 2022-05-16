@@ -52,7 +52,8 @@ export default {
         let result = await getLoginUser(res.data.account.id);
         //把用户信息result提交到vuex的state中
         this.$store.commit("updateUser", result);
-        console.log(result);
+        sessionStorage.setItem("user", JSON.stringify(result));
+        // console.log(result);
         //InfoUser中有v-show属性还需要修改该属性为true
         this.$router.push("/InfoUser");
       } else {

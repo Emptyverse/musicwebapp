@@ -1,10 +1,10 @@
-import service from '..'
+import { service } from '..'
 //获取歌单详情页的数据
 export function getMusicListItem(data) {
     return service({
         method: 'GET',
         //传入动态id 这里用的是模板字符串 差点又被坑了 0 0
-        url:`/playlist/detail?id=${data}`
+        url: `/playlist/detail?id=${data}`
     })
 }
 //获取歌单的所有歌曲
@@ -15,16 +15,23 @@ export function getMusicListSong(data) {
     })
 }
 //获取歌曲的歌词 把歌词保存在vuex中
-export function getMusicLyric(data){
+export function getMusicLyric(data) {
     return service({
-        method:"GET",
-        url:`/lyric?id=${data}`
+        method: "GET",
+        url: `/lyric?id=${data}`
     })
 }
 //获取用户详情
-export function getLoginUser(data){
+export function getLoginUser(data) {
     return service({
-        method:"GET",
-        url:`/user/detail?uid=${data}`
+        method: "GET",
+        url: `/user/detail?uid=${data}`
     })
-} 
+}
+// 获取首页中的 每日推荐 中的歌单列表
+export function getDailyRecom() {
+    return service({
+        method: "GET",
+        url: `/recommend/songs`
+    }).catch((err) => err.response);
+}

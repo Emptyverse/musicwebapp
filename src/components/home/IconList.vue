@@ -1,20 +1,20 @@
 <template>
     <div class="iconList">
         <!-- 每一个为一个div盒子加span标签 共四个-->
-        <div class="iconItem">
+        <div class="iconItem" @click="$router.push('/DailyPlayList')">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-tuijian"></use>
             </svg>
             <span>每日推荐</span>
         </div>
         <div class="iconItem">
-            <svg class="icon" aria-hidden="true">
+            <svg class="icon" aria-hidden="true" @click="$router.push('/personalFm')">
                 <use xlink:href="#icon-zhibo"></use>
             </svg>
             <span>私人FM</span>
         </div>
         <div class="iconItem">
-            <svg class="icon" aria-hidden="true">
+            <svg class="icon" aria-hidden="true" @click="$router.push('/songList')">
                 <use xlink:href="#icon-gedan"></use>
             </svg>
             <span>歌单</span>
